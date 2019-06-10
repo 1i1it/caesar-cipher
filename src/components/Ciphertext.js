@@ -15,6 +15,8 @@ class Ciphertext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter ciphertext"
+            value={this.props.cipherTextVal}
+            onChange={this.props.onCipherTextChange}
           />
         </center>
       </div>);

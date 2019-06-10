@@ -12,8 +12,14 @@ class Shift extends Component {
         <center>
           <Select
             autoWidth={true}
-            displayEmpty>
-            <MenuItem value="" disabled>Enter shift amount</MenuItem>
+            value={this.props.shiftVal}
+            onChange={(value) => this.props.selectShift(value)}>
+            <MenuItem value="">Enter shift amount</MenuItem>
+            <MenuItem selected value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="5">5</MenuItem>
           </Select>
         </center>
       </div>

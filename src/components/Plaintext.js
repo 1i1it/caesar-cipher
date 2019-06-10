@@ -14,6 +14,8 @@ class Plaintext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter plaintext"
+            value={this.props.plainTextVal}
+            onChange={this.props.onPlainTextChange}
           />
         </center>
       </div>);
