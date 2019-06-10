@@ -12,8 +12,20 @@ function shiftText (str, shift) {
         newArr.push(str.charAt(i));
       }
       else {
-        let newChar = String.fromCharCode(str.charCodeAt(i) + parseInt(shift));
-        newArr.push(newChar);
+        let code = str.charCodeAt(i);
+        // Uppercase letters
+        let c;
+        if ((code >= 65) && (code <= 90))
+          c = String.fromCharCode(((code - 65 + parseInt(shift)) % 26) + 65);
+
+        // Lowercase letters
+        else if ((code >= 97) && (code <= 122))
+          c = String.fromCharCode(((code - 97 + parseInt(shift)) % 26) + 97);
+
+        // let newCharCode = str.charCodeAt(i) + parseInt(shift);
+        // newCharCode = (newCharCode % 65)+66;
+        // let newChar = String.fromCharCode(newCharCode);
+        newArr.push(c);
       }
     }
     return newArr.join("");
