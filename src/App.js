@@ -8,9 +8,13 @@ function shiftText (str, shift) {
   if (str) {
     let newArr = [];
     for (let i=0; i< str.length; i++) {
-      let newChar = String.fromCharCode(str.charCodeAt(i) + parseInt(shift));
-      console.log(str.charCodeAt(i), newChar)
-      newArr.push(newChar);
+      if (str.charCodeAt(i) === 32 ) {
+        newArr.push(str.charAt(i));
+      }
+      else {
+        let newChar = String.fromCharCode(str.charCodeAt(i) + parseInt(shift));
+        newArr.push(newChar);
+      }
     }
     return newArr.join("");
   }
